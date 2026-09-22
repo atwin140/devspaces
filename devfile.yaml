@@ -1,0 +1,41 @@
+schemaVersion: 2.2.0
+metadata:
+  name: andrews-toolkit-share
+attributes:
+  controller.devfile.io/storage-type: per-workspace
+  pod-overrides:
+    spec:
+      hostUsers: true
+components:
+  - name: tooling-container
+    container:
+      image: docker.io/andrewdarley/termtool:v26.07.29.4
+      memoryRequest: 1Gi
+      memoryLimit: 6Gi
+      cpuRequest: 1000m
+      cpuLimit: 4000m
+      mountSources: true
+      env:
+        - name: HOME
+          value: /projects
+      command:
+        - tail
+      args:
+        - '-f'
+        - /dev/null
+
+projects:
+  - name: iips-automation
+    git:
+      remotes:
+        origin: https://github.southernco.com/SouthernCo/iips-openshift-automation.git
+  - name: k8s-gitops
+    git:
+      remotes:
+        origin: https://github.southernco.com/SouthernCo/k8s-cluster-config.git
+  - name: ocp-gitops
+    git:
+      remotes:
+        origin: https://github.southernco.com/SouthernCo/ocp-cluster-gitops.git
+        
+

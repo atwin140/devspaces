@@ -25,17 +25,17 @@ components:
         - /dev/null
 
 projects:
-  - name: iips-automation
+  - name: devspaces
     git:
       remotes:
-        origin: https://github.southernco.com/SouthernCo/iips-openshift-automation.git
-  - name: k8s-gitops
+        origin: git@github.com:atwin140/devspaces.git
+  - name: ocp-cluster-config
     git:
       remotes:
-        origin: https://github.southernco.com/SouthernCo/k8s-cluster-config.git
-  - name: ocp-gitops
+        origin: git@github.com:atwin140/OCP-Cluster-config.git
+  - name: eqip
     git:
       remotes:
-        origin: https://github.southernco.com/SouthernCo/ocp-cluster-gitops.git
+        origin: git@github.com:atwin140/ahead-eqip.git
         
 
